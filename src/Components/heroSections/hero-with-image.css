@@ -1,0 +1,32 @@
+.heroWithImg--textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+.heroWithImg--textContainer--suntitle {
+  order: -1;
+  margin: 0;
+}
+
+.heroWithImg--textContainer--title {
+  font-size: 56px;
+  font-weight: 300;
+  width: 20ch;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.heroWithImg--textContainer--downBtn {
+  background-color: black;
+  border: 1px solid black;
+  padding: 25px;
+  border-radius: 100px;
+  color: white;
+  align-self: flex-end;
+  transition: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
+}
+.heroWithImg--textContainer--downBtn:hover {
+  background-color: transparent;
+  color: black;
+}

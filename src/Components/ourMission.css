@@ -1,0 +1,29 @@
+.ourMission {
+  margin-top: 122px;
+  min-height: 650px;
+}
+
+.ourMission--article {
+  font-size: 28px;
+  max-width: 60ch;
+  text-wrap: balance;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.ourMission--right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 140px;
+  gap: 100px;
+}
+.ourMission--right--title {
+  font-size: 32px;
+  font-weight: 300;
+}
+.ourMission--right--text {
+  width: 40ch;
+  text-wrap: balance;
+  font-size: 20px;
+  color: #696969;
+}
