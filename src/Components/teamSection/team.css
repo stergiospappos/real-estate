@@ -1,0 +1,83 @@
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+/* Title Styling */
+.team-grid--grid-item--title {
+  font-size: 56px;
+  font-weight: 300;
+  width: 15ch;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+/* General Team Grid Item Styling */
+.team-grid--grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.team-grid--grid-item:not(:first-child) {
+  padding: 15px;
+}
+
+/* Grid Borders */
+.team-grid--grid-item {
+  border-top: 1px solid #e8eaee;
+}
+.team-grid--grid-item:nth-child(2),
+.team-grid--grid-item:nth-child(4),
+.team-grid--grid-item:nth-child(5) {
+  border-right: 1px solid #e8eaee;
+}
+.team-grid--grid-item:nth-child(4),
+.team-grid--grid-item:nth-child(5),
+.team-grid--grid-item:nth-child(6) {
+  border-bottom: 1px solid #e8eaee;
+}
+
+/* Avatar Image Styling */
+.team-grid--grid-item--img {
+  width: 250px;
+  height: 250px;
+  background-color: #f4f0ef;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+/* Team Member Name Styling */
+.team-grid--grid-item--name {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 36px 0 8px;
+}
+
+/* Team Member Position Styling */
+.team-grid--grid-item--position {
+  font-size: 16px;
+  font-weight: 300;
+  color: #696969;
+}
+
+/* Optional: Responsive Design */
+@media (max-width: 1300px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid--grid-item--img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 950px) {
+  .team-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

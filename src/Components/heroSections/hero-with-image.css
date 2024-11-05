@@ -4,6 +4,10 @@
   gap: 14px;
   margin-top: 30px;
 }
+
+.heroWithImg--imgContainer img {
+  width: 100%;
+}
 .heroWithImg--textContainer--suntitle {
   order: -1;
   margin: 0;

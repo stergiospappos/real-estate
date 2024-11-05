@@ -1,3 +1,4 @@
+import React from "react";
 import "./hero-with-image.css";
 import heroImg from "../../assets/minimal-apartment.jpg";
 import { ArrowDown } from "lucide-react";
