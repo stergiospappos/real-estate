@@ -8,7 +8,7 @@
 
 /* Title Styling */
 .team-grid--grid-item--title {
-  font-size: 56px;
+  font-size: var(--font-size-xxl);
   font-weight: 300;
   width: 15ch;
   text-align: left;
@@ -52,14 +52,14 @@
 
 /* Team Member Name Styling */
 .team-grid--grid-item--name {
-  font-size: 24px;
+  font-size: var(--font-size-lg);
   font-weight: 300;
   margin: 36px 0 8px;
 }
 
 /* Team Member Position Styling */
 .team-grid--grid-item--position {
-  font-size: 16px;
+  font-size: var(--font-size-sm);
   font-weight: 300;
   color: #696969;
 }
@@ -73,6 +73,25 @@
   .team-grid--grid-item--img {
     width: 150px;
     height: 150px;
+  }
+
+  .team-grid--grid-item {
+    border-bottom: none;
+    border-right: 1px solid #e8eaee;
+  }
+  .team-grid--grid-item:nth-child(5) {
+    border-bottom: 1px solid #e8eaee;
+  }
+  .team-grid--grid-item:nth-child(4) {
+    border-bottom: none;
+  }
+  .team-grid--grid-item:nth-child(2n) {
+    /* Adjust based on your grid structure */
+    border-right: 1px solid #e8eaee;
+    /* Remove right border from last item in each row */
+  }
+  .team-grid--grid-item:last-child {
+    border-bottom: 1px solid #e8eaee;
   }
 }
 

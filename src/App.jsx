@@ -1,18 +1,21 @@
 import React from "react";
 import Header from "./SharedComponent/Header.jsx";
-import Hero_With_Image from "./Components/heroSections/hero-with-image.jsx";
-import OurMission from "./Components/ourMission.jsx";
-import Features from "./Components/featuresSection/features.jsx";
-import Team from "./Components/teamSection/team.jsx";
+import Footer from "./SharedComponent/Footer.jsx";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import Home from "./home.jsx";
+import ContactPage from "./contact.jsx";
 
 function App() {
   return (
     <div id="app">
-      <Header />
-      <Hero_With_Image />
-      <OurMission />
-      <Features />
-      <Team />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

@@ -15,14 +15,14 @@
 }
 
 .features--left--title {
-  font-size: 56px;
+  font-size: var(--font-size-xxl);
   font-weight: 300;
   margin: 0;
   line-height: 1.5;
   width: 10ch;
 }
 .features--left--text {
-  font-size: 18px;
+  font-size: var(--font-size-md);
   font-weight: 300;
   color: #696969;
   width: 50ch;
@@ -65,12 +65,12 @@
 .features--right--item--title {
   margin-bottom: 8px;
   margin-top: 16px;
-  font-size: 24px;
+  font-size: var(--font-size-lg);
   font-weight: 300;
 }
 .features--right--item--text {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--font-size-md);
   letter-spacing: -3;
   color: #696969;
   width: 40ch;

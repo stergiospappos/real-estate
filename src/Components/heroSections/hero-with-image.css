@@ -14,7 +14,7 @@
 }
 
 .heroWithImg--textContainer--title {
-  font-size: 56px;
+  font-size: var(--font-size-xxl);
   font-weight: 300;
   width: 20ch;
   text-wrap: balance;

@@ -1,0 +1,114 @@
+/* General styling */
+.slider-container {
+  width: 100%;
+
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  width: 100%;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* Individual card styling */
+.card {
+  min-width: calc(100% / 3);
+  /* Show 3 cards at a time */
+  flex: 0 0 calc(100% / 3);
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Card image and price styling */
+.card-image {
+  position: relative;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  height: 430px;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #234e46;
+  color: #c7e3b3;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: var(--font-size-xs) !;
+  font-weight: 300;
+}
+
+/* Title and description styling */
+.card-title {
+  font-size: var(--font-size-md);
+  font-weight: 300;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.card-desc {
+  color: #696969;
+  font-size: var(--font-size-sm);
+  margin-top: 8px;
+  text-align: left;
+  max-width: 75%;
+  text-wrap: balance;
+}
+
+/* Button controls styling */
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.controls button {
+  padding: 12px;
+  margin: 0 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid 1px black;
+  border-radius: 100px;
+}
+
+.controls button svg {
+  width: 34px;
+  stroke-width: 1px;
+}
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 100%;
+    /* Show only one card per view */
+    flex: 0 0 100%;
+  }
+}

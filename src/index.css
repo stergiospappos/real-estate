@@ -1,5 +1,8 @@
 #root {
-  padding: 80px;
+  padding-left: var(--gutter-horizontal);
+  padding-right: var(--gutter-horizontal);
+  padding-top: var(--gutter-vertical);
+  padding-bottom: var(--gutter-vertical);
 }
 
 *,
@@ -25,6 +28,8 @@ body {
   font-family: "DM Sans", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  font-size: var(--font-size-sm);
+  overflow-x: hidden;
 }
 
 html,
@@ -76,4 +81,189 @@ figure {
 .btn:hover {
   background-color: black;
   color: white;
+}
+
+/* Distances */
+:root {
+  /* Fluid paddings & margins (min values) */
+  --distance-min-xxsmall: 20;
+  --distance-min-xsmall: 30;
+  --distance-min-small: 40;
+  --distance-min-medium: 40;
+  --distance-min-large: 50;
+  --distance-min-xlarge: 90;
+  /* Fluid paddings & margins (max values) */
+  --distance-max-xxsmall: 30;
+  --distance-max-xsmall: 40;
+  --distance-max-small: 80;
+  --distance-max-medium: 120;
+  --distance-max-large: 180;
+  --distance-max-xlarge: 240;
+  /* Container & page gutters */
+  --gutter-horizontal-min: 20;
+  --gutter-horizontal-max: 120;
+  --gutter-vertical-min: 20;
+  --gutter-vertical-max: 80;
+  --gutter-horizontal: calc(1 * var(--gutter-horizontal-min) * 1px);
+  --gutter-vertical: calc(1 * var(--gutter-vertical-min) * 1px);
+  /* Bootstrap */
+  --bs-gutter-x: 20px;
+  --bs-gutter-y: 20px;
+}
+@media screen and (min-width: 360px) {
+  :root {
+    --gutter-horizontal: calc(
+      1 *
+        (
+          var(--gutter-horizontal-min) * 1px +
+            (var(--gutter-horizontal-max) - var(--gutter-horizontal-min)) *
+            (100vw - 360px) / 1560
+        )
+    );
+  }
+}
+@media screen and (min-width: 1920px) {
+  :root {
+    --gutter-horizontal: calc(1 * var(--gutter-horizontal-max) * 1px);
+  }
+}
+@media screen and (min-width: 360px) {
+  :root {
+    --gutter-vertical: calc(
+      1 *
+        (
+          var(--gutter-vertical-min) * 1px +
+            (var(--gutter-vertical-max) - var(--gutter-vertical-min)) *
+            (100vw - 360px) / 1560
+        )
+    );
+  }
+}
+@media screen and (min-width: 1920px) {
+  :root {
+    --gutter-vertical: calc(1 * var(--gutter-vertical-max) * 1px);
+  }
+}
+
+:root {
+  /* Base font sizes */
+  --font-xs: 14px;
+  --font-sm: 16px;
+  --font-md: 20px;
+  --font-lg: 24px;
+  --font-xl: 32px;
+  --font-xxl: 56px;
+
+  /* Responsive scaling */
+  --font-size-xs: clamp(10px, 1vw + 8px, var(--font-xs));
+  --font-size-sm: clamp(12px, 1vw + 10px, var(--font-sm));
+  --font-size-md: clamp(14px, 1.2vw + 10px, var(--font-md));
+  --font-size-lg: clamp(16px, 1.5vw + 12px, var(--font-lg));
+  --font-size-xl: clamp(20px, 2vw + 14px, var(--font-xl));
+  --font-size-xxl: clamp(24px, 2.5vw + 16px, var(--font-xxl));
+}
+
+/* Text utility classes */
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.text-xxl {
+  font-size: var(--font-size-xxl);
+}
+
+/*RESPONSIVE*/
+
+@media only screen and (max-width: 1024px) {
+  .header--nav--ul {
+    display: none !important;
+  }
+  .header--nav--mobile {
+    display: block !important;
+    margin-left: 25px;
+  }
+
+  .header--nav {
+    justify-content: flex-end !important;
+  }
+
+  .header--nav--logo {
+    margin-right: auto !important;
+  }
+
+  .features {
+    flex-direction: column !important;
+    gap: var(--gutter-vertical) !important;
+  }
+
+  .features--right {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .card-image {
+    height: 300px !important;
+  }
+  .card-desc {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 950px) {
+  .heroWithImg--textContainer--downBtn {
+    padding: 12px !important;
+  }
+  .team-grid--grid-item--title {
+    text-align: center !important;
+  }
+  .team-grid--grid-item {
+    border: none !important;
+    outline: 0.5px solid #e8eaee !important;
+  }
+
+  .card-image {
+    height: 50% !important;
+  }
+
+  .card {
+    min-width: calc(100% / 2) !important;
+  }
+  .footer {
+    flex-direction: column !important;
+  }
+  .footer--left,
+  .footer--right {
+    width: 100% !important;
+    border: none !important;
+  }
+  .footer--right--menus {
+    gap: 20px !important;
+    justify-content: flex-start !important;
+  }
+  .footer--right--menus-list {
+    min-width: 40% !important;
+  }
+
+  .footer--right {
+    padding-left: 0 !important;
+    margin-top: 40px !important;
+    padding-top: 40px !important;
+    border-top: 0.5px solid #e8eaee !important;
+  }
 }

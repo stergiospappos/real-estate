@@ -3,8 +3,13 @@
 }
 
 .header--nav--logo {
-  font-size: 24px;
+  font-size: var(--font-size-xl);
   font-weight: 400;
+}
+
+.header--nav--logo a {
+  text-decoration: none;
+  color: #000;
 }
 .header--nav {
   display: flex;
@@ -12,6 +17,9 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
+}
+.header--nav--mobile {
+  display: none;
 }
 
 .header--nav--ul {

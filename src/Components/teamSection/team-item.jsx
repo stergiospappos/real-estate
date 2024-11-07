@@ -1,7 +1,6 @@
 import React from "react";
 
 function TeamMember({ data }) {
-  console.log(data);
   return (
     <div className="team-grid--grid-item">
       <img

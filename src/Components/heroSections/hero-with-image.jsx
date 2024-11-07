@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 
 function Hero_With_Image() {
   return (
-    <div className="heroWithImg">
+    <section className="heroWithImg">
       <div className="heroWithImg--imgContainer">
         <img src={heroImg} alt="" className="heroWithImg--imgContainer--img" />
       </div>
@@ -18,7 +18,7 @@ function Hero_With_Image() {
           <ArrowDown />
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 
