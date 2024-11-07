@@ -1,5 +1,5 @@
 import React from "react";
-import "./OurMission.css";
+import "../../Components/missionSection/ourMission.css";
 
 function OurMission() {
   return (
