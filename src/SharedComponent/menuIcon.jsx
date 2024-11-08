@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 
 const MenuIcon = () => {
@@ -8,24 +8,11 @@ const MenuIcon = () => {
   const line3Ref = useRef(null);
 
   const handleClick = () => {
+    setIsOpen(!isOpen); // Toggle state
+  };
+
+  useEffect(() => {
     if (isOpen) {
-      // Animate back to original position
-      gsap.fromTo(
-        line1Ref.current,
-        { rotation: 45, x: 1, y: 7, transformOrigin: "12px 0px" },
-        { rotation: 0, x: 0, y: 0, transformOrigin: "12px 0px", duration: 0.3 }
-      );
-      gsap.fromTo(
-        line2Ref.current,
-        { opacity: 0 },
-        { opacity: 1, duration: 0.3 }
-      );
-      gsap.fromTo(
-        line3Ref.current,
-        { rotation: -45, x: 1, y: -7, transformOrigin: "7px -2px" },
-        { rotation: 0, x: 0, y: 0, transformOrigin: "7px -2px", duration: 0.3 }
-      );
-    } else {
       // Animate to "X" position with custom transform origins
       gsap.fromTo(
         line1Ref.current,
@@ -48,9 +35,25 @@ const MenuIcon = () => {
           duration: 0.3,
         }
       );
+    } else {
+      // Animate back to original position
+      gsap.fromTo(
+        line1Ref.current,
+        { rotation: 45, x: 1, y: 7, transformOrigin: "12px 0px" },
+        { rotation: 0, x: 0, y: 0, transformOrigin: "12px 0px", duration: 0.3 }
+      );
+      gsap.fromTo(
+        line2Ref.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.3 }
+      );
+      gsap.fromTo(
+        line3Ref.current,
+        { rotation: -45, x: 1, y: -7, transformOrigin: "7px -2px" },
+        { rotation: 0, x: 0, y: 0, transformOrigin: "7px -2px", duration: 0.3 }
+      );
     }
-    setIsOpen(!isOpen); // Toggle state
-  };
+  }, [isOpen]); // Only re-run this animation when `isOpen` changes
 
   return (
     <div

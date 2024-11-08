@@ -1,3 +1,4 @@
+/* General Header Styles */
 .header {
   margin-bottom: 60px;
 }
@@ -11,17 +12,34 @@
   text-decoration: none;
   color: #000;
 }
+
 .header--nav {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
 }
+
+/* Mobile Menu Toggle Button */
 .header--nav--mobile {
-  display: none;
+  display: none; /* Hidden by default on desktop */
 }
 
+.header--nav-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 100px;
+  transition: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
+  font-weight: 300;
+}
+.header--nav-button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Desktop Navigation List */
 .header--nav--ul {
   list-style: none;
   padding: 0;
@@ -31,8 +49,8 @@
 }
 
 .header--nav--li {
-  flex: 1; /* Each item grows equally to fill the available space */
-  min-width: 100px; /* Ensures a minimum width for readability */
+  flex: 1;
+  min-width: 100px;
   max-width: 200px;
   padding: 16px 8px;
   border-radius: 100px;
@@ -50,16 +68,61 @@
   font-weight: 300;
 }
 
-.header--nav-button {
-  padding: 10px 20px;
-  font-size: 14px;
-  background-color: transparent;
-  border: 1px solid black;
-  border-radius: 100px;
-  transition: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
-  font-weight: 300;
-}
-.header--nav-button:hover {
-  background-color: black;
-  color: white;
+/* Responsive Styles */
+@media (max-width: 1025px) {
+  /* Hide the main navigation on mobile */
+  .header--nav--ul {
+    display: none;
+  }
+
+  .header--nav--mobile.open-menu {
+    z-index: 1000 !important;
+    color: white;
+  }
+
+  /* Show mobile menu toggle button */
+  .header--nav--mobile {
+    display: block;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Full-screen mobile menu when open */
+  .header--nav--ul.open-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #1a1a1a;
+    color: white;
+    align-items: flex-start;
+
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+    padding: 20px;
+  }
+
+  .header--nav--li {
+    flex-grow: 0 !important;
+    padding: 20;
+    border-radius: 100px;
+    transition: all 0.2s cubic-bezier(0.75, 0, 0.25, 1);
+    text-align: left;
+  }
+
+  .header--nav--li a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-xxl) !important;
+  }
+  .header--nav--li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }

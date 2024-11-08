@@ -191,22 +191,6 @@ figure {
 /*RESPONSIVE*/
 
 @media only screen and (max-width: 1024px) {
-  .header--nav--ul {
-    display: none !important;
-  }
-  .header--nav--mobile {
-    display: block !important;
-    margin-left: 25px;
-  }
-
-  .header--nav {
-    justify-content: flex-end !important;
-  }
-
-  .header--nav--logo {
-    margin-right: auto !important;
-  }
-
   .features {
     flex-direction: column !important;
     gap: var(--gutter-vertical) !important;
